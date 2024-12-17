@@ -13,7 +13,6 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column;
         }
 
         .container {
@@ -22,13 +21,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-        }
-
-        img {
-            width: 100px;
-            height: auto;
-            margin-bottom: 20px;
         }
 
         button {
@@ -40,26 +32,15 @@
             border-radius: 5px;
             background-color: #007bff;
             color: white;
-            transition: background-color 0.3s ease;
         }
 
         button:hover {
             background-color: #0056b3;
         }
-
-        #fun-fact {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .fade-in {
-            opacity: 1;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://example.com/earth-image.jpg" alt="Earth Image">
         <h1>Earth Fun Fact Generator</h1>
         <p id="fun-fact">Click the button to see a fun fact about Earth!</p>
         <button onclick="generateFunFact()">Generate Fun Fact</button>
@@ -80,10 +61,7 @@
 
         function generateFunFact() {
             const randomIndex = Math.floor(Math.random() * funFacts.length);
-            const funFactElement = document.getElementById('fun-fact');
-            funFactElement.textContent = funFacts[randomIndex];
-            funFactElement.classList.remove('fade-in');
-            setTimeout(() => funFactElement.classList.add('fade-in'), 10);
+            document.getElementById('fun-fact').textContent = funFacts[randomIndex];
         }
     </script>
 </body>
